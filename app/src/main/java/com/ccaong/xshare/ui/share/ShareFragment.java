@@ -1,35 +1,38 @@
 package com.ccaong.xshare.ui.share;
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-
-import androidx.annotation.Nullable;
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+import android.widget.Toast;
 
 import com.ccaong.xshare.R;
+import com.ccaong.xshare.base.BaseFragment;
+import com.ccaong.xshare.databinding.FragmentShareBinding;
+import com.ccaong.xshare.view.MapView;
 
-public class ShareFragment extends Fragment {
+/**
+ * @author devel
+ */
+public class ShareFragment extends BaseFragment<FragmentShareBinding, ShareViewModel> {
 
-    private ShareViewModel shareViewModel;
+    @Override
+    protected int getLayoutResId() {
+        return R.layout.fragment_share;
+    }
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        shareViewModel =
-                ViewModelProviders.of(this).get(ShareViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_share, container, false);
-        final TextView textView = root.findViewById(R.id.text_share);
-        shareViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
+    @Override
+    protected void initViewModel() {
+
+    }
+
+    @Override
+    protected void bindViewModel() {
+
+    }
+
+    @Override
+    protected void init() {
+        mDataBinding.mapView.setOnViewItemClickListener(name -> showPrivate());
+    }
+
+    private void showPrivate() {
+        mDataBinding.mapView.setMapResId(R.raw.chinahigh34);
     }
 }

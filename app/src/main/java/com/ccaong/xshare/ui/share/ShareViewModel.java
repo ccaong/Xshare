@@ -1,19 +1,14 @@
 package com.ccaong.xshare.ui.share;
 
+import com.ccaong.xshare.base.viewmodel.BaseViewModel;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ShareViewModel extends ViewModel {
+/**
+ * @author devel
+ */
+public class ShareViewModel extends BaseViewModel {
 
-    private MutableLiveData<String> mText;
-
-    public ShareViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is share fragment");
-    }
-
-    public LiveData<String> getText() {
-        return mText;
-    }
 }

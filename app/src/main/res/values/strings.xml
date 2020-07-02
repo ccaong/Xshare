@@ -13,4 +13,13 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+
+    <string name="btn_send">SEND FILE</string>
+    <string name="str_unit_mb">MB</string>
+    <string name="str_unit_sec">SEC</string>
+    <string name="str_unit_send">SEND</string>
+    <string name="str_unit_lift">LIFT</string>
+    <string name="str_dialog_msg">Whether to leave the group?</string>
+    <string name="share_toast">Permission denied, can not receive file</string>
+
 </resources>
